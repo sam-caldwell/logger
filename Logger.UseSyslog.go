@@ -11,4 +11,5 @@ func (log *Logger) UseSyslog() {
 	if log.target, err = syslog.New(syslog.LOG_NOTICE|syslog.LOG_USER, "myapp"); err != nil {
 		goLog.Fatal("failed to connect to syslog:", err)
 	}
+	goLog.SetOutput(log.target)
 }

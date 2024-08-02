@@ -1,8 +1,12 @@
 package logger
 
-import "os"
+import (
+	goLog "log"
+	"os"
+)
 
 // UseStderr - Configure logger for stderr
 func (log *Logger) UseStderr() {
 	log.target = os.Stderr
+	goLog.SetOutput(log.target)
 }
