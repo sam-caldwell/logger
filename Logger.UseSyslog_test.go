@@ -44,7 +44,8 @@ func TestLogger_UseSyslog(t *testing.T) {
 			t.Fatal(err)
 		}
 		if string(out) != "" {
-			t.Fatalf("expected no stdout output")
+			t.Fatalf("expected no stdout output\n"+
+				"got: '%v'", out)
 		}
 		lines, endCount := getLogs()
 		if endCount-startCount != 1 {
