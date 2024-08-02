@@ -26,7 +26,6 @@ func TestLogger_UseStderr(t *testing.T) {
 
 		// Capture the output from stderr
 		out := stderr.String()
-		t.Log(out)
 
 		parts := strings.Split(out, " ")
 		rhs := strings.Join(parts[2:], " ")

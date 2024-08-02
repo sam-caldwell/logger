@@ -10,7 +10,7 @@ import (
 func TestLogger_UseStdout(t *testing.T) {
 	var log Logger
 	t.Run("configure stdout", func(t *testing.T) {
-		log.UseStderr()
+		log.UseStdout()
 	})
 
 	t.Run("call examples/stdout/main.go as test program", func(t *testing.T) {

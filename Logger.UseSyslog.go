@@ -8,7 +8,8 @@ import (
 // UseSyslog - Configure logger for syslog
 func (log *Logger) UseSyslog() {
 	var err error
-	if log.target, err = syslog.New(syslog.LOG_NOTICE|syslog.LOG_USER, "myapp"); err != nil {
+	p := log.level.ToSysLogPriority()
+	if log.target, err = syslog.New(p, "myapp"); err != nil {
 		goLog.Fatal("failed to connect to syslog:", err)
 	}
 	goLog.SetOutput(log.target)
