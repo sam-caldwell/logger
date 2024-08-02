@@ -2,13 +2,13 @@ package logger
 
 import "log/syslog"
 
-// ToSyslogPriority - Convert our log levels to the syslog priorities.
+// ToSysLogPriority - Convert our log levels to the syslog priorities.
 //
 // The internal levels follow the syslog RFC pretty closely.  But
 // these levels may add non-RFC values in the future.  This method
 // converts our log levels to an RFC5424 user level priority value.
 // See https://datatracker.ietf.org/doc/html/rfc5424
-func (level *Levels) ToSyslogPriority() syslog.Priority {
+func (level *Levels) ToSysLogPriority() syslog.Priority {
 	switch *level {
 	case Critical:
 		return syslog.LOG_USER | syslog.LOG_CRIT
