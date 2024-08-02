@@ -19,7 +19,7 @@ const (
 	// Info - informational messages
 	Info Levels = 5
 	// Informational - longer form of Info
-	Informational Levels = 5
+	Informational Levels = Info
 	// Debug - Debugging information
 	Debug Levels = 6
 )
