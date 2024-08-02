@@ -16,7 +16,9 @@ const (
 	Warning Levels = 3
 	// Notice - normal but significant conditions
 	Notice Levels = 4
-	// Informational - informational messages
+	// Info - informational messages
+	Info Levels = 5
+	// Informational - longer form of Info
 	Informational Levels = 5
 	// Debug - Debugging information
 	Debug Levels = 6
