@@ -3,6 +3,9 @@ package logger
 import "testing"
 
 func TestLevels_Type(t *testing.T) {
+	/*
+	 *	NOTE: The order of these levels (e.g. their numeric value is extremely important).
+	 */
 	data := []Levels{
 		Critical, Alert, Error, Warning, Notice, Info, Debug,
 	}
