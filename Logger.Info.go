@@ -8,6 +8,6 @@ func (log *Logger) Info(msg string) {
 }
 
 // Infof - write a formatted string to the logger.
-func (log *Logger) Infof(formatString, msg string) {
-	log.Info(fmt.Sprintf(formatString, msg))
+func (log *Logger) Infof(formatString string, msg ...any) {
+	log.Info(fmt.Sprintf(formatString, msg...))
 }
