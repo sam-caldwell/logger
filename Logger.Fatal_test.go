@@ -28,14 +28,12 @@ func TestLogger_Fatal(t *testing.T) {
 		n := 10
 		msg := "test"
 		currentLevel := Critical
-
 		exitCode := fmt.Sprintf("%d", n)
 		cmd := exec.Command(testBinary, "-msg", msg, "-exit", exitCode)
 		var stdout, stderr bytes.Buffer
 		cmd.Stdout = &stdout
 		cmd.Stderr = &stderr
 		err := cmd.Run()
-
 		t.Run("Test exit code", func(t *testing.T) {
 			// Check if the command failed (expected since it calls os.Exit)
 			if exitError, ok := err.(*exec.ExitError); ok {
@@ -55,7 +53,6 @@ func TestLogger_Fatal(t *testing.T) {
 				t.Fatalf("unexpected output on stderr: %v", stderr)
 			}
 		})
-
 		t.Run("test stdout", func(t *testing.T) {
 			// Capture the output
 			out := stdout.String()

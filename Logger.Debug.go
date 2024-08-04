@@ -8,6 +8,6 @@ func (log *Logger) Debug(msg string) {
 }
 
 // Debugf - write a formatted string to the logger.
-func (log *Logger) Debugf(formatString, msg string) {
-	log.Debug(fmt.Sprintf(formatString, msg))
+func (log *Logger) Debugf(formatString string, msg ...any) {
+	log.Debug(fmt.Sprintf(formatString, msg...))
 }

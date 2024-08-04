@@ -11,10 +11,7 @@ func TestLogger_Info(t *testing.T) {
 	var log Logger
 
 	verifyData := func(out string, expected string, expectEmpty bool) error {
-		if expectEmpty {
-
-		} else {
-
+		if !expectEmpty {
 			parts := strings.Split(out, " ")
 			rhs := strings.Join(parts[2:], " ")
 			if rhs != expected {

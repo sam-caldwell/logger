@@ -8,6 +8,6 @@ func (log *Logger) Error(msg string) {
 }
 
 // Errorf - write a formatted string to the logger.
-func (log *Logger) Errorf(formatString, msg string) {
-	log.Error(fmt.Sprintf(formatString, msg))
+func (log *Logger) Errorf(formatString string, msg ...any) {
+	log.Error(fmt.Sprintf(formatString, msg...))
 }

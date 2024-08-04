@@ -8,6 +8,6 @@ func (log *Logger) Notice(msg string) {
 }
 
 // Noticef - write a formatted string to the logger.
-func (log *Logger) Noticef(formatString, msg string) {
-	log.Notice(fmt.Sprintf(formatString, msg))
+func (log *Logger) Noticef(formatString string, msg ...any) {
+	log.Notice(fmt.Sprintf(formatString, msg...))
 }

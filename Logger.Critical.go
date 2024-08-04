@@ -8,6 +8,6 @@ func (log *Logger) Critical(msg string) {
 }
 
 // Criticalf - write a formatted string to the logger.
-func (log *Logger) Criticalf(formatString, msg string) {
-	log.Critical(fmt.Sprintf(formatString, msg))
+func (log *Logger) Criticalf(formatString string, msg ...any) {
+	log.Critical(fmt.Sprintf(formatString, msg...))
 }
